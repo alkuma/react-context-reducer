@@ -69,6 +69,7 @@ function App() {
   }
 
   const ctxValue = {
+    // link the state to the context
     items: shoppingCart.items,
     addItemToCart : handleAddItemToCart
 
