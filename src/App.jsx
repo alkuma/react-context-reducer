@@ -71,20 +71,19 @@ function App() {
   const ctxValue = {
     // link the state to the context
     items: shoppingCart.items,
-    addItemToCart : handleAddItemToCart
+    addItemToCart : handleAddItemToCart,
+    updateItemQuantity : handleUpdateCartItemQuantity
 
   };
 
   return (
+
     <CartContext.Provider value={ctxValue}>
-      <Header
-        cart={shoppingCart}
-        onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
-      />
+      <Header/>
       <Shop onAddItemToCart={handleAddItemToCart} >
         {DUMMY_PRODUCTS.map((product) => (
             <li key={product.id}>
-              <Product {...product} onAddToCart={handleAddItemToCart} />
+              <Product {...product} />
             </li>
 
         ))}
